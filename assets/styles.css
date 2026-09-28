@@ -30,7 +30,7 @@ a:focus-visible, summary:focus-visible {
 }
 ::selection { background: #b9dfd3; color: var(--ink); }
 h1, h2, h3, p { margin-top: 0; }
-h1, h2, h3 { line-height: 1.35; letter-spacing: -.045em; }
+h1, h2, h3 { line-height: 1.35; letter-spacing: -.02em; }
 p { margin-bottom: 0; }
 .shell { width: min(calc(100% - 64px), var(--shell)); margin-inline: auto; }
 .mono, .eyebrow, .brand {
@@ -98,7 +98,7 @@ p { margin-bottom: 0; }
   font-size: clamp(2.8rem, 5.5vw, 5.2rem);
   font-weight: 600;
   line-height: 1.23;
-  letter-spacing: -.075em;
+  letter-spacing: -.035em;
 }
 .hero-intro {
   max-width: 620px;
@@ -347,7 +347,7 @@ p { margin-bottom: 0; }
   font-size: clamp(2.5rem, 4.8vw, 4.6rem);
   line-height: 1.25;
   font-weight: 600;
-  letter-spacing: -.065em;
+  letter-spacing: -.03em;
 }
 .detail-summary { max-width: 780px; color: var(--muted); font-size: 1.15rem; line-height: 1.8; }
 .detail-meta {
