@@ -1,4 +1,39 @@
+const archive = document.querySelector('#all-work');
+
+if (archive) {
+  const openArchiveFromHash = () => {
+    if (window.location.hash === '#all-work') {
+      archive.open = true;
+      archive.querySelector('summary')?.focus({ preventScroll: true });
+    }
+  };
+  openArchiveFromHash();
+  window.addEventListener('hashchange', openArchiveFromHash);
+  for (const link of document.querySelectorAll('a[href="#all-work"]')) {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      archive.open = true;
+      if (window.location.hash !== '#all-work') window.location.hash = 'all-work';
+      else archive.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      archive.querySelector('summary')?.focus({ preventScroll: true });
+    });
+  }
+}
+
 const policyDemo = document.querySelector("[data-policy-demo]");
+
+for (const panel of document.querySelectorAll('.mobile-nav, .mobile-story-toc')) {
+  panel.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { panel.open = false; }));
+  document.addEventListener('click', event => {
+    if (panel.open && !panel.contains(event.target)) panel.open = false;
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && panel.open) {
+      panel.open = false;
+      panel.querySelector('summary')?.focus({ preventScroll: true });
+    }
+  });
+}
 
 if (policyDemo) {
   const examples = {
